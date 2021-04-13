@@ -18,16 +18,16 @@ current chapter or they can also delete a story if they are no longer reading it
 4. `npm start` to run localhost
 
 #### Deployed Frontend App:
-https://d-raimon.github.io/mack-client/#/
+https://d-raimon.github.io/mack-atlas-client/#/
 
 #### Frontend Repo:
-https://github.com/D-Raimon/mack-client
+https://github.com/D-Raimon/mack-atlas-client
 
 #### Deployed Backend:
 https://floating-eyrie-47940.herokuapp.com/
 
 #### Backend Repo:
-https://github.com/D-Raimon/mack-api
+https://github.com/D-Raimon/mack-atlas-api
 
 #### Technologies Used:
 - React
