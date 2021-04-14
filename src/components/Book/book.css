@@ -1,0 +1,31 @@
+.book_primary {
+  display: flex;
+  margin-top: 4rem;
+  background-color: #ff6449e7;
+  opacity: .85;
+  color: white;
+  border-radius: 25px;
+}
+.content-primary{
+  display: flex;
+  flex-direction: column;
+}
+.book_img {
+  justify-content: flex-start;
+}
+.book_secondary {
+  justify-content: flex-end;
+  margin-left: 2rem;
+}
+.book_buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-left: 2rem;
+}
+a {
+  color: lightseagreen;
+}
+a:hover{
+  color: lightsalmon;
+}

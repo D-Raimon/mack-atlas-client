@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import { v4 as uuid } from 'uuid'
 
 import AuthenticatedRoute from './components/AuthenticatedRoute/AuthenticatedRoute'
@@ -9,6 +9,12 @@ import SignUp from './components/SignUp/SignUp'
 import SignIn from './components/SignIn/SignIn'
 import SignOut from './components/SignOut/SignOut'
 import ChangePassword from './components/ChangePassword/ChangePassword'
+// import LoginForm from './components/LogIn/LogIn'
+import Books from './components/Book/Books'
+import Book from './components/Book/Book'
+import CreateBook from './components/Book/CreateBook'
+import EditBook from './components/Book/EditBook'
+import Home from './components/Home/Home'
 
 class App extends Component {
   constructor (props) {
@@ -53,6 +59,12 @@ class App extends Component {
           />
         ))}
         <main className="container">
+          <Route exact path='/' render={() => (
+            <Home user={user}/>
+          )} />
+          {/* <Route path='/log-in' render={() => (
+            <LoginForm alert={this.alert} setUser={this.setUser} />
+          )} /> */}
           <Route path='/sign-up' render={() => (
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
@@ -64,6 +76,20 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword msgAlert={this.msgAlert} user={user} />
+          )} />
+          <Switch>
+            <Route path="/books/:id/edit" render={(props) => (
+              <EditBook {...props} alert={this.alert} user={user} />
+            )} />
+            <Route exact path='/books/:id' render={(props) => (
+              <Book {...props} alert={this.alert} user={user} />
+            )} />
+            <Route exact path='/books' render={() => (
+              <Books alert={this.alert} user={user} />
+            )} />
+          </Switch>
+          <Route exact path='/create-book' render={(props) => (
+            <CreateBook {...props} alert={this.alert} user={user} />
           )} />
         </main>
       </Fragment>

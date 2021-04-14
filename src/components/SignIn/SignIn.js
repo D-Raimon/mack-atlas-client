@@ -12,8 +12,8 @@ class SignIn extends Component {
     super(props)
 
     this.state = {
-      email: '',
-      password: ''
+      email: 'example@gmail.com',
+      password: '123abc'
     }
   }
 
@@ -48,42 +48,82 @@ class SignIn extends Component {
     const { email, password } = this.state
 
     return (
-      <div className="row">
-        <div className="col-sm-10 col-md-8 mx-auto mt-5">
-          <h3>Sign In</h3>
-          <Form onSubmit={this.onSignIn}>
-            <Form.Group controlId="email">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control
-                required
-                type="email"
-                name="email"
-                value={email}
-                placeholder="Enter email"
-                onChange={this.handleChange}
-              />
-            </Form.Group>
-            <Form.Group controlId="password">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                required
-                name="password"
-                value={password}
-                type="password"
-                placeholder="Password"
-                onChange={this.handleChange}
-              />
-            </Form.Group>
-            <Button
-              variant="primary"
-              type="submit"
-            >
-              Submit
-            </Button>
-          </Form>
+      <div>
+        <div className="sign_in_primary">
+          <div className="sign_in_secondary col-sm-10 col-md-8 mx-auto mt-5">
+            <h3>Sign In</h3>
+            <Form onSubmit={this.onSignIn}>
+              <Form.Group controlId="email">
+                <Form.Label>Email</Form.Label>
+                <Form.Control
+                  required
+                  type="email"
+                  name="email"
+                  value={email}
+                  placeholder="Email"
+                  onChange={this.handleChange}
+                />
+              </Form.Group>
+              <Form.Group controlId="password">
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                  required
+                  name="password"
+                  value={password}
+                  type="password"
+                  placeholder="Password"
+                  onChange={this.handleChange}
+                />
+                <small>Please use the sample user for a demo</small>
+              </Form.Group>
+              <Button
+                style={{ backgroundColor: '#ff6449e7', border: 'none' }}
+                type="submit"
+              >
+                Submit
+              </Button>
+            </Form>
+          </div>
         </div>
       </div>
     )
+    // return (
+    //   <div className="row">
+    //     <div className="col-sm-10 col-md-8 mx-auto mt-5">
+    //       <h3>Sign In</h3>
+    //       <Form onSubmit={this.onSignIn}>
+    //         <Form.Group controlId="email">
+    //           <Form.Label>Email address</Form.Label>
+    //           <Form.Control
+    //             required
+    //             type="email"
+    //             name="email"
+    //             value={email}
+    //             placeholder="Enter email"
+    //             onChange={this.handleChange}
+    //           />
+    //         </Form.Group>
+    //         <Form.Group controlId="password">
+    //           <Form.Label>Password</Form.Label>
+    //           <Form.Control
+    //             required
+    //             name="password"
+    //             value={password}
+    //             type="password"
+    //             placeholder="Password"
+    //             onChange={this.handleChange}
+    //           />
+    //         </Form.Group>
+    //         <Button
+    //           variant="primary"
+    //           type="submit"
+    //         >
+    //           Submit
+    //         </Button>
+    //       </Form>
+    //     </div>
+    //   </div>
+    // )
   }
 }
 
